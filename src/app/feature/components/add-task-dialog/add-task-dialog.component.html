@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>Add Task</h1>
+<form>
+    <div mat-dialog-content>
+        <mat-form-field appearance="outline">
+            <mat-label>Task</mat-label>
+            <input matInput>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Priority</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let priority of priorities" [value]="priority.value">
+                    <span class="priority-badge" [ngStyle]="{'background': priority.color}"></span>
+                    {{priority.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Due Date</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="close()">Cancel</button>
+        <button mat-flat-button color="primary">Submit</button>
+    </div>
+</form>

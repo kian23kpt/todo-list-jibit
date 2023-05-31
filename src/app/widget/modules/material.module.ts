@@ -32,6 +32,7 @@ import { MatBottomSheetModule, MatBottomSheetRef } from '@angular/material/botto
 import { MatListModule } from '@angular/material/list';
 
 import { MatCardModule } from '@angular/material/card';
+import {MatNativeDateModule} from '@angular/material/core';
 
 @NgModule({
   imports: [
@@ -55,7 +56,7 @@ import { MatCardModule } from '@angular/material/card';
     MatButtonToggleModule,
     MatMenuModule,
     MatDatepickerModule,
-    // MatNativeDateModule,
+    MatNativeDateModule,
     // NativeDateModule,
     // MatMomentDateModule,
     MatBottomSheetModule,
@@ -83,7 +84,7 @@ import { MatCardModule } from '@angular/material/card';
     MatButtonToggleModule,
     MatMenuModule,
     MatDatepickerModule,
-    // MatNativeDateModule,
+    MatNativeDateModule,
     // NativeDateModule,
     MatAutocompleteModule,
     MatProgressBarModule,
@@ -94,7 +95,6 @@ import { MatCardModule } from '@angular/material/card';
   declarations: [],
   providers: [
     { provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: { disabled: true } },
-    { provide: MAT_DATE_LOCALE, useValue: 'fa' },
     { provide: MatBottomSheetRef, useValue: {} },
   ],
 })

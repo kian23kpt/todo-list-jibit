@@ -9,7 +9,7 @@ const routes: Routes = [
       import('./feature/modules/auth.module').then((m) => m.AuthModule),
   },
   {
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     path: 'panel',
     loadChildren: () =>
       import('./feature/modules/panel.module').then((m) => m.PanelModule),

@@ -1,0 +1,15 @@
+:host {
+  .mdc-dialog__content {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .mat-mdc-dialog-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    box-sizing: border-box;
+    padding: 15px;
+  }
+}
