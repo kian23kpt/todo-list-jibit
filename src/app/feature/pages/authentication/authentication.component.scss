@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 24%, rgba(0,212,255,1) 100%);
+  padding: 20px;
+
+
+  mat-tab-group {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    background: #ffffff;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px;
+
+    button {
+      height: 45px;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+<mat-tab-group>
+    <mat-tab label="Sign In">
+            <form (submit)="signin()">
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput>
+                </mat-form-field>
+
+                <button mat-flat-button color="primary" type="submit">Login</button>
+            </form>
+    </mat-tab>
+    <mat-tab label="Sign Up">
+            <form (submit)="signup()">
+                <mat-form-field appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <input matInput>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput>
+                </mat-form-field>
+
+                <button mat-flat-button color="primary" type="submit">Submit</button>
+            </form>
+    </mat-tab>
+</mat-tab-group>
