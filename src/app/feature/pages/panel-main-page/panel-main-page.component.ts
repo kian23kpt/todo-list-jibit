@@ -14,7 +14,7 @@ export class PanelMainPageComponent {
 
   openAddTaskDialog() {
     const dialogRef = this._dialog.open(AddTaskDialogComponent, {
-      width: '300px',
+      width: '400px',
     });
 
     // dialogRef.afterClosed().subscribe(result => {
