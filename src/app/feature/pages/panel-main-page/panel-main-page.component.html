@@ -1,25 +1,43 @@
-<button mat-stroked-button color="primary" (click)="openAddTaskDialog()">New Task <mat-icon>add</mat-icon></button>
+<button mat-stroked-button color="primary" (click)="openAddTaskDialog()">New Task
+    <mat-icon>add</mat-icon></button>
 <mat-accordion>
-    <mat-expansion-panel hideToggle>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+        *ngFor="let task of openTasks">
         <mat-expansion-panel-header>
             <mat-panel-title>
-                This is the expansion title
+                <span class="badge" [ngClass]="task?.priority"></span> {{task?.title}} {{task.status}}
             </mat-panel-title>
             <mat-panel-description>
-                This is a summary of the content
+                {{task?.dueDate|date:'MMM dd'}}
             </mat-panel-description>
         </mat-expansion-panel-header>
-        <p>This is the primary content of the panel.</p>
-    </mat-expansion-panel>
-    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                Self aware panel
-            </mat-panel-title>
-            <mat-panel-description>
-                Currently I am {{panelOpenState ? 'open' : 'closed'}}
-            </mat-panel-description>
-        </mat-expansion-panel-header>
-        <p>I'm visible because I am open</p>
+        <p>{{task?.description}}</p>
+        <p>{{task?.priority}}</p>
+        <p>Creation Time: {{task?.creationTime|date: 'MMM dd - hh:mm'}}</p>
+        <button mat-stroked-button color="basic">edit</button>
+        <button mat-stroked-button color="warn" (click)="removeTask(task.id)">Delete</button>
+        <button mat-stroked-button color="primary" (click)="done(task.id)">Done</button>
     </mat-expansion-panel>
 </mat-accordion>
+
+<!-- completed task section -->
+<section class="completed-tasks__section" *ngIf="completedTasks.length !== 0">
+    <h2>Done</h2>
+    <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+            *ngFor="let task of completedTasks">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <span class="badge" [ngClass]="task?.priority"></span> {{task?.title}} {{task.status}}
+                </mat-panel-title>
+                <mat-panel-description>
+                    {{task?.dueDate|date:'MMM dd'}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>{{task?.description}}</p>
+            <p>{{task?.priority}}</p>
+            <p>Creation Time: {{task?.creationTime|date: 'MMM dd - hh:mm'}}</p>
+            <button mat-stroked-button color="warn" (click)="removeTask(task.id)">Delete</button>
+        </mat-expansion-panel>
+    </mat-accordion>
+</section>

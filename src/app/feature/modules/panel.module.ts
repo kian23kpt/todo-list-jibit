@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { WidgetModule } from 'src/app/widget/widget.module';
 import { AddTaskDialogComponent, SidebarComponent } from '../components';
 import { MainLayoutComponent } from '../layouts/main-layout/main-layout.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -21,6 +22,11 @@ const routes: Routes = [
     SidebarComponent,
     MainLayoutComponent,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes), WidgetModule],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    WidgetModule,
+    ReactiveFormsModule,
+  ],
 })
 export class PanelModule {}

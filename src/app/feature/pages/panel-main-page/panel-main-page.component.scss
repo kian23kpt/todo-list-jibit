@@ -1,3 +1,39 @@
-:host{
-    margin: 50px;
+:host {
+  display: block;
+  margin: 20px;
+
+  button {
+    margin-bottom: 20px;
+  }
+
+  .badge {
+    display: block;
+    width: 10px;
+    height: 10px;
+    margin-inline-end: 10px;
+  }
+
+  .high {
+    background: red;
+  }
+  .medium {
+    background: orange;
+  }
+  .low {
+    background: green;
+  }
+
+  .completed-tasks__section {
+    margin-top: 40px;
+
+    mat-panel-title {
+      text-decoration: line-through;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  :host {
+    margin: 30px 50px;
+  }
 }
