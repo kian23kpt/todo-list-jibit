@@ -17,7 +17,7 @@ export class AddTaskDialogComponent {
     { value: 'low', color: 'green' },
   ];
 
-  form = this._fb.group({
+  form = this._fb.nonNullable.group({
     id: '',
     title: '',
     description: '',

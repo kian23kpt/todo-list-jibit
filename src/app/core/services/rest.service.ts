@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Task } from '../models';
+import { Auth, Task } from '../models';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -15,7 +15,7 @@ export class RestService {
     return this._http.get<Task.model[]>(this._baseUrl + 'tasks');
   }
 
-  addTask(data: any) {
+  addTask(data: Task.model | any) {
     return this._http.post(this._baseUrl + 'tasks', data);
   }
 
@@ -26,7 +26,15 @@ export class RestService {
   editTask(data: Task.model, id: string) {
     return this._http.patch(this._baseUrl + 'tasks/' + id, data);
   }
+
   done(id: string) {
     return this._http.patch(this._baseUrl + 'tasks/' + id, { status: 2 });
+  }
+
+  signin(): Observable<Auth.user[]> {
+    return this._http.get<Auth.user[]>(this._baseUrl + 'users');
+  }
+  signup(data: Auth.user | any) {
+    return this._http.post(this._baseUrl + 'users', data);
   }
 }
