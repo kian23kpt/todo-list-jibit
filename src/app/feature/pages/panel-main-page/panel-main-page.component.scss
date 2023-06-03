@@ -2,8 +2,13 @@
   display: block;
   margin: 20px;
 
-  button {
+  .add-button {
     margin-bottom: 20px;
+  }
+  
+  .buttons__container {
+    display: flex;
+    gap: 10px;
   }
 
   .badge {

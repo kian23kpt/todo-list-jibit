@@ -1,22 +1,25 @@
-<button mat-stroked-button color="primary" (click)="openAddTaskDialog()">New Task
-    <mat-icon>add</mat-icon></button>
+<button mat-stroked-button color="primary" class="add-button" (click)="openAddTaskDialog()">New Task <mat-icon>add</mat-icon></button>
 <mat-accordion>
     <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
         *ngFor="let task of openTasks">
         <mat-expansion-panel-header>
             <mat-panel-title>
-                <span class="badge" [ngClass]="task?.priority"></span> {{task?.title}} {{task.status}}
+                <span class="badge" [ngClass]="task?.priority"></span> {{task?.title}}
             </mat-panel-title>
             <mat-panel-description>
-                {{task?.dueDate|date:'MMM dd'}}
+                {{task?.dueDate|date:'MMM dd'}} ({{remainingTime(task.dueDate)}})
             </mat-panel-description>
         </mat-expansion-panel-header>
-        <p>{{task?.description}}</p>
-        <p>{{task?.priority}}</p>
+        <p>Description: {{task?.description}}</p>
+        <p>Priority: {{task?.priority}}</p>
         <p>Creation Time: {{task?.creationTime|date: 'MMM dd - hh:mm'}}</p>
-        <button mat-stroked-button color="basic">edit</button>
-        <button mat-stroked-button color="warn" (click)="removeTask(task.id)">Delete</button>
-        <button mat-stroked-button color="primary" (click)="done(task.id)">Done</button>
+        <div class="buttons__container">
+
+            <button mat-stroked-button color="primary" (click)="done(task.id)"><mat-icon>done</mat-icon> Done</button>
+            <button mat-stroked-button color="basic" (click)="edit(task)"><mat-icon>edit</mat-icon> edit</button>
+            <button mat-stroked-button color="warn" (click)="removeTask(task.id)"><mat-icon>delete</mat-icon>
+                Delete</button>
+        </div>
     </mat-expansion-panel>
 </mat-accordion>
 
@@ -37,7 +40,8 @@
             <p>{{task?.description}}</p>
             <p>{{task?.priority}}</p>
             <p>Creation Time: {{task?.creationTime|date: 'MMM dd - hh:mm'}}</p>
-            <button mat-stroked-button color="warn" (click)="removeTask(task.id)">Delete</button>
+            <button mat-stroked-button color="warn" (click)="removeTask(task.id)"><mat-icon>delete</mat-icon>
+                Delete</button>
         </mat-expansion-panel>
     </mat-accordion>
 </section>

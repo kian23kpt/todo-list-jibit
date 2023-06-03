@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PanelMainPageComponent } from '../pages';
 import { RouterModule, Routes } from '@angular/router';
 import { WidgetModule } from 'src/app/widget/widget.module';
-import { AddTaskDialogComponent, SidebarComponent } from '../components';
+import { TaskDialogComponent, SidebarComponent } from '../components';
 import { MainLayoutComponent } from '../layouts/main-layout/main-layout.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -18,7 +18,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     PanelMainPageComponent,
-    AddTaskDialogComponent,
+    TaskDialogComponent,
     SidebarComponent,
     MainLayoutComponent,
   ],
