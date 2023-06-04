@@ -41,6 +41,7 @@ export class AuthenticationComponent {
           user.email === this.signinForm.value.email &&
           user.password === this.signinForm.value.password
         ) {
+          localStorage.setItem('authorized', 'true');
           this._router.navigateByUrl('');
         } else {
           this.showError = true;
