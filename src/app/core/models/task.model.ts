@@ -18,4 +18,9 @@ export namespace Task {
     open = 1,
     done = 2,
   }
+
+  export interface chartDataModel {
+    x: string;
+    y: number;
+  }
 }

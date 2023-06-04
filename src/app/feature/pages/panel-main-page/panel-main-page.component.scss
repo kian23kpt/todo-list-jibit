@@ -5,7 +5,7 @@
   .add-button {
     margin-bottom: 20px;
   }
-  
+
   .buttons__container {
     display: flex;
     gap: 10px;
@@ -35,10 +35,24 @@
       text-decoration: line-through;
     }
   }
+
+  mat-expansion-panel-header,
+  mat-expansion-panel-body {
+    padding: 0 10px;
+  }
+
+  mat-panel-description {
+    flex-grow: 1;
+  }
 }
 
 @media screen and (min-width: 768px) {
   :host {
     margin: 30px 50px;
+
+    mat-expansion-panel-header,
+    mat-expansion-panel-body {
+      padding: 0 20px;
+    }
   }
 }

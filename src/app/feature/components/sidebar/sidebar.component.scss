@@ -8,6 +8,10 @@
   color: #ffffff;
   padding: 10px 20px;
   height: 60px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   ul {
     list-style: none;
@@ -21,10 +25,22 @@
       gap: 5px;
       cursor: pointer;
       margin: 0 10px;
+      font-size: 16px;
+    }
+  }
+  mat-icon {
+    display: none;
+  }
 
-      mat-icon{
-        display: none;
-      }
+  button {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    width: auto;
+
+    mat-icon {
+      width: 24px;
+      height: 24px;
     }
   }
 }
@@ -33,16 +49,28 @@
   :host {
     padding: 40px;
     height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
     ul {
       li {
         display: flex;
         gap: 10px;
         margin: 30px 0;
-        
-        mat-icon{
-          display: block;
-        }
+        font-size: 20px;
       }
+    }
+    mat-icon {
+      display: block;
+    }
+    button {
+      color: #ffffff;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
     }
   }
 }

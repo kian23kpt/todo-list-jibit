@@ -12,7 +12,9 @@ export class RestService {
   constructor(private _http: HttpClient) {}
 
   getAllTasks(): Observable<Task.model[]> {
-    return this._http.get<Task.model[]>(this._baseUrl + 'tasks');
+    return this._http.get<Task.model[]>(
+      this._baseUrl + 'tasks?_sort=dueDate&_order=aesc'
+    );
   }
 
   addTask(data: Task.model | any) {
@@ -34,7 +36,7 @@ export class RestService {
   signin(): Observable<Auth.user[]> {
     return this._http.get<Auth.user[]>(this._baseUrl + 'users');
   }
-  
+
   signup(data: Auth.user | any) {
     return this._http.post(this._baseUrl + 'users', data);
   }

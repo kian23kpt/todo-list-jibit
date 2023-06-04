@@ -1,0 +1,24 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  margin: 20px 0;
+
+  #chart {
+    width: 100%;
+    max-width: 90%;
+    max-height: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  :host {
+    min-height: 100vh;
+
+    #chart {
+      max-width: 50%;
+      max-height: 50%;
+    }
+  }
+}

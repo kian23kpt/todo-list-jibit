@@ -41,7 +41,7 @@ export class AuthenticationComponent {
           user.email === this.signinForm.value.email &&
           user.password === this.signinForm.value.password
         ) {
-          this._router.navigateByUrl('panel');
+          this._router.navigateByUrl('');
         } else {
           this.showError = true;
         }

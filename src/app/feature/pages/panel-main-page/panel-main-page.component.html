@@ -31,14 +31,14 @@
             *ngFor="let task of completedTasks">
             <mat-expansion-panel-header>
                 <mat-panel-title>
-                    <span class="badge" [ngClass]="task?.priority"></span> {{task?.title}} {{task.status}}
+                    <span class="badge" [ngClass]="task?.priority"></span> {{task?.title}}
                 </mat-panel-title>
                 <mat-panel-description>
                     {{task?.dueDate|date:'MMM dd'}}
                 </mat-panel-description>
             </mat-expansion-panel-header>
-            <p>{{task?.description}}</p>
-            <p>{{task?.priority}}</p>
+            <p>Description: {{task?.description}}</p>
+            <p>Priority: {{task?.priority}}</p>
             <p>Creation Time: {{task?.creationTime|date: 'MMM dd - hh:mm'}}</p>
             <button mat-stroked-button color="warn" (click)="removeTask(task.id)"><mat-icon>delete</mat-icon>
                 Delete</button>
